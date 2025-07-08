@@ -14,7 +14,7 @@ function App() {
         </LifecycleTest>
       </div> */}
       
-      <HousingFinder />
+      {/* <HousingFinder /> */}
 
 
     </div>
