@@ -1,12 +1,24 @@
 import json
 from datetime import datetime
-import pymysql  
+import pymysql
 
 def parse_date(date_str):
     try:
         return datetime.strptime(date_str, "%Y%m%d").date()
     except Exception:
         return None
+
+def get_공고유형_id(유형명: str) -> int:
+    mapping = {
+        "매입임대": 1,
+        "국민임대": 2,
+        "안심주택": 3,
+        "장기전세": 4,
+        "행복주택": 5,
+        "신혼신생아 전세임대": 6,
+        "든든전세": 7
+    }
+    return mapping.get(유형명, None)
 
 def insert_notices(data_list, start_id, conn):
     try:
@@ -20,43 +32,40 @@ def insert_notices(data_list, start_id, conn):
                 공고시작일 = parse_date(item.get("beginDe", ""))
                 공고마감일 = parse_date(item.get("endDe", ""))
                 건물타입 = item.get("houseTyNm", "")
-                공고유형 = item.get("suplyTyNm", "")
+                공고유형명 = item.get("suplyTyNm", "")
+                공고유형ID = get_공고유형_id(공고유형명)
+
+                if 공고유형ID is None:
+                    print(f"⚠️ 공고유형 '{공고유형명}' 매핑되지 않음 → 건너뜀")
+                    continue
+
                 url = item.get("pcUrl", "")
                 보증금 = item.get("rentGtn", 0)
                 월세 = item.get("mtRntchrg", 0)
                 한줄요약 = ''
-                소득 = 0
-                가구원수 = 0
-                주택보유여부 = 0
-                자동차가액 = 0
-                자산 = 0
                 rawjson = json.dumps(item, ensure_ascii=False)
 
                 sql = """
                 INSERT INTO 공고 (
-                    공고번호, 기관명, 지역자치명_도, 지역자치명_시, 상세주소,
-                    공고시작일, 공고마감일, 건물타입, 공고유형, url,
-                    보증금, 월세, 한줄요약, 소득, 가구원수,
-                    주택보유여부, 자동차가액, 자산, rawjson
+                    공고번호, 공고유형ID, 기관명, 지역자치명_도, 지역자치명_시, 상세주소,
+                    공고시작일, 공고마감일, 건물타입, url,
+                    보증금, 월세, 한줄요약, rawjson
                 ) VALUES (
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s, %s, %s,
+                    %s, %s, %s, %s,
                     %s, %s, %s, %s
                 )
                 """
                 cursor.execute(sql, (
-                    공고번호, 기관명, 지역자치명_도, 지역자치명_시, 상세주소,
-                    공고시작일, 공고마감일, 건물타입, 공고유형, url,
-                    보증금, 월세, 한줄요약, 소득, 가구원수,
-                    주택보유여부, 자동차가액, 자산, rawjson
+                    공고번호, 공고유형ID, 기관명, 지역자치명_도, 지역자치명_시, 상세주소,
+                    공고시작일, 공고마감일, 건물타입, url,
+                    보증금, 월세, 한줄요약, rawjson
                 ))
         conn.commit()
-        print("데이터 삽입 완료 (총", len(data_list), "건)")
+        print("데이터 삽입 완료 (총", len(data_list), "건 중 유효:", cursor.rowcount, "건)")
     except Exception as e:
         print("에러 발생:", e)
         conn.rollback()
-
 
 def load_and_insert(file_path, json_path=None, start_id=1, conn=None):
     print(f" {file_path} → DB 삽입 시작")
@@ -71,10 +80,8 @@ def load_and_insert(file_path, json_path=None, start_id=1, conn=None):
 
     insert_notices(data, start_id=start_id, conn=conn)
 
-
 # ----------------- 실행부 -------------------------------
 
-# 연결 예시
 conn = pymysql.connect(
     host="127.0.0.1",
     user="root",
