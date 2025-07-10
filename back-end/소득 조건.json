@@ -1,0 +1,137 @@
+[
+  {
+    "type": "영구임대주택",
+    "age_limit": "제한 없음",
+    "income_limit": "50% 이하 (1,364,500원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": [
+      "기초생활수급자",
+      "국가유공자",
+      "장애인",
+      "한부모가정",
+      "노인",
+      "보호종료아동"
+    ],
+    "rental_period": "최대 50년",
+    "features": "매우 저렴한 임대료, 장기 거주 가능"
+  },
+  {
+    "type": "국민임대주택",
+    "age_limit": "제한 없음",
+    "income_limit": "70% 이하 (1,910,300원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["무주택 세대주"],
+    "rental_period": "30년 이상",
+    "features": "대표적인 저소득층 장기임대"
+  },
+  {
+    "type": "행복주택(청년)",
+    "age_limit": "만 19~39세",
+    "income_limit": "100~120% 이하 (2,729,000~3,274,800원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": [
+      "대학생",
+      "청년",
+      "사회초년생",
+      "무주택자"
+    ],
+    "rental_period": "6~10년",
+    "features": "역세권 중심, 청년 대상"
+  },
+  {
+    "type": "행복주택(신혼부부)",
+    "age_limit": "결혼 7년 이내",
+    "income_limit": "100~130% 이하 (2,729,000~3,547,700원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["신혼부부", "자녀 있음 가점"],
+    "rental_period": "6~10년",
+    "features": "보육시설 근접, 신혼부부 중심"
+  },
+  {
+    "type": "장기전세주택(시프트)",
+    "age_limit": "제한 없음",
+    "income_limit": "100~150% 이하 (2,729,000~4,093,500원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": [
+      "무주택자",
+      "서울시 1년 이상 거주자"
+    ],
+    "rental_period": "최대 20년",
+    "features": "전세금만 납부, 자가처럼 거주"
+  },
+  {
+    "type": "공공전세주택",
+    "age_limit": "제한 없음",
+    "income_limit": "150% 이하 (4,093,500원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["무주택자"],
+    "rental_period": "4~8년",
+    "features": "시세 대비 저렴한 전세금"
+  },
+  {
+    "type": "공공지원 민간임대(청년형)",
+    "age_limit": "만 19~39세",
+    "income_limit": "120~150% 이하 (3,274,800~4,093,500원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["청년", "사회초년생", "취업준비생"],
+    "rental_period": "4~8년",
+    "features": "민간임대에 공공지원 결합"
+  },
+  {
+    "type": "전세임대(청년형)",
+    "age_limit": "만 19~39세",
+    "income_limit": "100~150% 이하 (2,729,000~4,093,500원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["대학생", "취준생", "사회초년생"],
+    "rental_period": "최대 6년",
+    "features": "원하는 주택 선택 가능 / 전세자금 지원"
+  },
+  {
+    "type": "매입임대주택(청년)",
+    "age_limit": "만 19~39세",
+    "income_limit": "100% 이하 (2,729,000원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["1인 청년 가구"],
+    "rental_period": "6~20년",
+    "features": "기존 주택 매입 활용, 저렴한 임대료"
+  },
+  {
+    "type": "역세권 청년주택",
+    "age_limit": "만 19~39세",
+    "income_limit": "120% 이하 (3,274,800원 이하)",
+    "asset_limit": {
+      "total_assets": "3.29억 이하",
+      "vehicle": "3,557만 이하"
+    },
+    "eligibility": ["서울 거주자", "서울 근무자"],
+    "rental_period": "6년 + 조건부 연장",
+    "features": "역세권 중심, 민간+공공 복합"
+  }
+]
