@@ -21,7 +21,7 @@ def get_housings():
             sql = "SELECT * FROM 공고"  # 본인 테이블명으로 바꾸기
             cursor.execute(sql)
             results = cursor.fetchall()
-            print(results)  # 여기서 데이터 출력
+            # print(results)  # 여기서 데이터 출력
     finally:
         conn.close()
     return jsonify(results)

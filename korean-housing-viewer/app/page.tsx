@@ -6,12 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
+import { HousingList }  from "@/components/ui/db"
 import { MapPin, Calendar, ExternalLink, Filter, X } from "lucide-react"
 import Link from "next/link"
-import { fetchHousingData, HousingItem } from '../lib/api'
-
-
-
 
 // Sample data with income/asset requirements added
 const sampleHousingData = [
@@ -174,27 +171,6 @@ export default function HousingViewer() {
     vehicle: "", // 보유차량가액
   })
 
-  const [data, setData] = useState<HousingItem[] | null>(null);
-
-  // -------------------------------------
-  useEffect(() => {
-    fetchHousingData().then(setData).catch(console.error);
-  }, []);
-
-  if (!data) return <div>Loading...</div>;
-
-  return (
-    <ul>
-      {data.map((item) => (
-        <li key={item.공고번호}>
-          {item.공고유형ID} {item.기관명}
-        </li>
-      ))}
-    </ul>
-  );
-
-  // ----------------------
-
   useEffect(() => {
     // In a real implementation, this would parse HTML data
     setHousingData(sampleHousingData)
@@ -264,6 +240,7 @@ export default function HousingViewer() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
+       <HousingList />
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
@@ -274,9 +251,8 @@ export default function HousingViewer() {
             <Button
               onClick={() => setIsFilterOpen(true)}
               className="lg:hidden flex items-center gap-2"
-              variant="outline"
-            >
-              <Filter className="w-4 h-4" />
+              variant="outline">
+              <Filter className="w-4 h-4" /> 
               필터
             </Button>
           </div>
