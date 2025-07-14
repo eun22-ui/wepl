@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공공주택 데이터 구조 예시</title>
+</head>
+<body>
+    <!-- 
+    공공주택 데이터 입력 가이드
+    
+    이 HTML 파일은 공공주택 정보를 구조화된 형태로 저장하는 예시입니다.
+    각 주택 정보는 <div class="housing-item"> 태그로 감싸고,
+    data-* 속성을 사용하여 필터링에 필요한 정보를 저장합니다.
+    -->
+    
+    <div id="housing-data">
+        <!-- 주택 정보 1 -->
+        <div class="housing-item" 
+             data-id="1"
+             data-announcement-type="일반공급"
+             data-province="서울특별시"
+             data-district="강남구"
+             data-housing-type="아파트"
+             data-income-limit="7000"
+             data-asset-limit="28800"
+             data-vehicle-limit="3496">
+            
+            <h3 class="title">서울시 강남구 공공임대주택</h3>
+            <p class="description">강남구 역세권 공공임대주택 신규 공급</p>
+            <p class="address">서울특별시 강남구 테헤란로 123</p>
+            <p class="total-units">120</p>
+            <p class="application-period">2024.01.15 ~ 2024.01.25</p>
+            <p class="move-in-date">2024.06.01</p>
+            <p class="application-url">https://apply.lh.or.kr</p>
+            
+            <!-- 건물 정보 -->
+            <div class="building-info">
+                <p class="floors">지하 2층, 지상 15층</p>
+                <p class="parking-spaces">150</p>
+                <p class="construction-company">대한건설</p>
+                <p class="completion-date">2024.05.31</p>
+                <div class="facilities">
+                    <span>어린이집</span>
+                    <span>경로당</span>
+                    <span>관리사무소</span>
+                </div>
+            </div>
+            
+            <!-- 세대 정보 -->
+            <div class="unit-types">
+                <div class="unit-type" data-type="59㎡" data-units="60" data-deposit="35000000" data-rent="350000"></div>
+                <div class="unit-type" data-type="74㎡" data-units="40" data-deposit="42000000" data-rent="420000"></div>
+                <div class="unit-type" data-type="84㎡" data-units="20" data-deposit="48000000" data-rent="480000"></div>
+            </div>
+            
+            <!-- 자격 요건 -->
+            <div class="eligibility-requirements">
+                <p>무주택세대구성원</p>
+                <p>해당 지역 거주 또는 근무자</p>
+                <p>소득 및 자산 기준 충족</p>
+                <p>청약저축 가입 6개월 이상</p>
+            </div>
+            
+            <!-- 신청 절차 -->
+            <div class="application-process">
+                <p>온라인 신청서 작성</p>
+                <p>필요서류 제출</p>
+                <p>자격심사</p>
+                <p>당첨자 발표</p>
+                <p>계약체결</p>
+            </div>
+            
+            <!-- 필요 서류 -->
+            <div class="required-documents">
+                <p>신청서</p>
+                <p>주민등록등본</p>
+                <p>소득증명서</p>
+                <p>자산증명서</p>
+                <p>청약저축 가입확인서</p>
+            </div>
+        </div>
+        
+        <!-- 주택 정보 2 -->
+        <div class="housing-item" 
+             data-id="2"
+             data-announcement-type="청년우선공급"
+             data-province="부산광역시"
+             data-district="해운대구"
+             data-housing-type="아파트"
+             data-income-limit="5000"
+             data-asset-limit="20000"
+             data-vehicle-limit="2500">
+            
+            <h3 class="title">부산시 해운대구 행복주택</h3>
+            <p class="description">해운대 해변 인근 청년 행복주택</p>
+            <p class="address">부산광역시 해운대구 해운대해변로 456</p>
+            <p class="total-units">80</p>
+            <p class="application-period">2024.01.20 ~ 2024.01.30</p>
+            <p class="move-in-date">2024.07.01</p>
+            <p class="application-url">https://apply.lh.or.kr</p>
+            
+            <div class="building-info">
+                <p class="floors">지하 1층, 지상 12층</p>
+                <p class="parking-spaces">100</p>
+                <p class="construction-company">해운대건설</p>
+                <p class="completion-date">2024.06.30</p>
+                <div class="facilities">
+                    <span>피트니스센터</span>
+                    <span>스터디룸</span>
+                    <span>카페</span>
+                </div>
+            </div>
+            
+            <div class="unit-types">
+                <div class="unit-type" data-type="36㎡" data-units="50" data-deposit="20000000" data-rent="250000"></div>
+                <div class="unit-type" data-type="46㎡" data-units="30" data-deposit="25000000" data-rent="300000"></div>
+            </div>
+            
+            <div class="eligibility-requirements">
+                <p>만 19세 이상 39세 이하</p>
+                <p>무주택자</p>
+                <p>소득 및 자산 기준 충족</p>
+                <p>대학생 또는 취업준비생</p>
+            </div>
+            
+            <div class="application-process">
+                <p>온라인 신청</p>
+                <p>서류 제출</p>
+                <p>자격 심사</p>
+                <p>추첨</p>
+                <p>계약</p>
+            </div>
+            
+            <div class="required-documents">
+                <p>신청서</p>
+                <p>주민등록등본</p>
+                <p>소득증명서</p>
+                <p>재학증명서 또는 졸업증명서</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
