@@ -80,7 +80,7 @@ const sampleHousingData = [
     application_url: "https://apply.imc.or.kr",
     deposit: 18000000,
     monthly_rent: 200000,
-    agency_id: "SH",
+    agency_id: "",
     income_limit: 5500,
     asset_limit: 22000,
     vehicle_limit: 2800,
@@ -198,7 +198,7 @@ export default function HousingViewer() {
       // SQL 데이터를 기존 더미데이터 형태로 매핑
       const mappedData = sqlData.map(item => ({
         notice_id: item.공고번호 || item.공고번호,
-        status: "Y", // SQL에서 상태값이 없으면 기본값
+        status: "Y", 
         region_province: item.지역자치명_도, 
         region_city: item.지역자치명_시,
         address_detail: item.상세주소,
@@ -225,12 +225,6 @@ export default function HousingViewer() {
       setFilteredData(sampleHousingData);
     }
   }, [sqlData]);
-
-  useEffect(() => {
-    // In a real implementation, this would parse HTML data
-    setHousingData(sampleHousingData)
-    setFilteredData(sampleHousingData)
-  }, [])
 
   useEffect(() => {
     const filtered = housingData.filter((item) => {
@@ -299,6 +293,10 @@ export default function HousingViewer() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="pl-3">
+              <img
+                src="/IMG_1800.png"
+                alt="Korean Housing Viewer Logo"
+                className="h-[150px] w-auto mb-2"></img>
               <h1 className="text-3xl font-bold text-gray-900">한눈에 공공임대</h1>
               <p className="text-gray-600 mt-2">LH, SH, HUG 주택공고를 한곳에서</p>
             </div>
