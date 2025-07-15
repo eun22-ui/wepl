@@ -9,10 +9,19 @@ export interface HousingItem {
   공고마감일 : string;
   건물타입 : string;
   url : string;
-  보증금 : string;
-  월세 : string;
+
+  보증금 : number;
+  월세 : number;
   한줄요약 : string;
   rawjson : JSON;
+  유형명 : string;
+  연령제한 : string;
+  소득제한 : number;  
+  차량가액제한 : number;
+  자산총액제한 : number;
+  임대기간 : string;
+  특징 : string;
+  신청자격 : JSON;
 }
 
 'use client';

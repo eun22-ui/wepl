@@ -26,10 +26,10 @@ def get_housings():
     conn = get_db_connection()
     try:
         with conn.cursor() as cursor:
-            sql = "SELECT * FROM 공고"  # 본인 테이블명으로 바꾸기
+            sql = "SELECT * FROM 공고 JOIN 공고유형 ON 공고.공고유형ID = 공고유형.공고유형ID"  
             cursor.execute(sql)
             results = cursor.fetchall()
-            # print(results)  # 여기서 데이터 출력
+            print(results)  # 여기서 데이터 출력
     finally:
         conn.close()
     return jsonify(results)

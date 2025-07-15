@@ -6,39 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Badge } from "@/components/ui/badge"
-// import { HousingList }  from "@/components/ui/db"
 import { MapPin, Calendar, ExternalLink, Filter, X } from "lucide-react"
 import Link from "next/link"
 import { fetchHousingData, HousingItem } from "@/lib/api"; 
-
-export function HousingList() {
-  const [data, setData] = useState<HousingItem[] | null>(null);
-
-  useEffect(() => {
-    console.log('🏁 useEffect 실행됨');
-    fetchHousingData()
-      .then(setData)
-      .catch(console.error);
-  }, []);
-
-  if (!data) return <div>Loading housing data...</div>;
-
-  return (
-    <div className="grid gap-4 p-4">
-      {data.map((item) => (
-        <div key={item.공고번호} className="border p-4 rounded shadow">
-          <h2 className="text-lg font-bold">{item.공고유형ID} {item.지역자치명_도}</h2>
-          <p>{item.지역자치명_도}</p>
-          <p>📅 신청기간: {item.공고시작일} ~ {item.공고마감일}</p>
-          <p>🏠 유형: {item.건물타입}</p>
-          <p>💰 보증금: {item.보증금.toLocaleString()}원 / 월세: {item.월세.toLocaleString()}원</p>
-          <a href={item.url} target="_blank" className="text-blue-600 underline">신청하러 가기</a>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 
 // Sample data with income/asset requirements added
 const sampleHousingData = [
@@ -55,7 +25,7 @@ const sampleHousingData = [
     application_url: "https://apply.lh.or.kr",
     deposit: 35000000,
     monthly_rent: 350000,
-    agency_id: 1,
+    agency_id: "SH",
     // Added eligibility requirements
     income_limit: 7000, // 만원
     asset_limit: 28800, // 만원
@@ -74,7 +44,7 @@ const sampleHousingData = [
     application_url: "https://apply.sh.or.kr",
     deposit: 25000000,
     monthly_rent: 280000,
-    agency_id: 2,
+    agency_id: "LH",
     income_limit: 5000,
     asset_limit: 20000,
     vehicle_limit: 2500,
@@ -92,7 +62,7 @@ const sampleHousingData = [
     application_url: "https://apply.bmc.or.kr",
     deposit: 20000000,
     monthly_rent: 220000,
-    agency_id: 3,
+    agency_id: "HUG",
     income_limit: 6000,
     asset_limit: 25000,
     vehicle_limit: 3000,
@@ -110,7 +80,7 @@ const sampleHousingData = [
     application_url: "https://apply.imc.or.kr",
     deposit: 18000000,
     monthly_rent: 200000,
-    agency_id: 4,
+    agency_id: "SH",
     income_limit: 5500,
     asset_limit: 22000,
     vehicle_limit: 2800,
@@ -146,7 +116,7 @@ interface HousingData {
   application_url: string
   deposit: number
   monthly_rent: number
-  agency_id: number
+  agency_id: string
   income_limit: number
   asset_limit: number
   vehicle_limit: number
@@ -188,8 +158,10 @@ const getStatusColor = (status: string) => {
 }
 
 export default function HousingViewer() {
+  const [sqlData, setSqlData] = useState<HousingItem[] | null>(null); // SQL 데이터용
   const [housingData, setHousingData] = useState<HousingData[]>([])
   const [filteredData, setFilteredData] = useState<HousingData[]>([])
+  const [loading, setLoading] = useState(true); // 로딩 상태 추가
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [filters, setFilters] = useState({
     supply_type_id: "",
@@ -200,6 +172,59 @@ export default function HousingViewer() {
     asset: "", // 총 자산
     vehicle: "", // 보유차량가액
   })
+
+    // 1. SQL 데이터 가져오기
+  useEffect(() => {
+    // console.log('useEffect 실행됨');
+    setLoading(true);
+    
+    fetchHousingData()
+      .then((data) => {
+        console.log("데이터 수신 완료:", data);
+        setSqlData(data);
+      })
+      .catch((error) => {
+        console.error('데이터 가져오기 실패:', error);
+        setSqlData(null); // 에러시 null로 설정하여 더미데이터 사용
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  // 2. SQL 데이터를 HousingData 형태로 매핑
+  useEffect(() => {
+    if (sqlData && sqlData.length > 0) {
+      // SQL 데이터를 기존 더미데이터 형태로 매핑
+      const mappedData = sqlData.map(item => ({
+        notice_id: item.공고번호 || item.공고번호,
+        status: "Y", // SQL에서 상태값이 없으면 기본값
+        region_province: item.지역자치명_도, 
+        region_city: item.지역자치명_시,
+        address_detail: item.상세주소,
+        apply_start: item.공고시작일, 
+        apply_end: item.공고마감일, 
+        house_type: item.건물타입,
+        supply_type_id: item.공고유형ID,
+        application_url: item.url,
+        deposit: item.보증금 ,
+        monthly_rent: item.월세,
+        agency_id: item.기관명 , 
+        income_limit: item.소득제한,
+        asset_limit: item.자산총액제한,
+        vehicle_limit: item.차량가액제한
+      }));
+      
+      console.log("매핑된 데이터:", mappedData);
+      setHousingData(mappedData);
+      setFilteredData(mappedData);
+    } else {
+      // SQL 데이터가 없거나 에러 발생시 더미데이터 사용
+      console.log("더미데이터");
+      setHousingData(sampleHousingData);
+      setFilteredData(sampleHousingData);
+    }
+  }, [sqlData]);
 
   useEffect(() => {
     // In a real implementation, this would parse HTML data
@@ -270,7 +295,6 @@ export default function HousingViewer() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-       <HousingList />
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
@@ -341,11 +365,16 @@ export default function HousingViewer() {
                           <SelectValue placeholder="선택하세요" />
                         </SelectTrigger>
                         <SelectContent>
-                          {uniqueProvinces.map((province) => (
-                            <SelectItem key={province} value={province}>
-                              {province}
-                            </SelectItem>
-                          ))}
+                          {uniqueProvinces
+                            .filter(province => province && province.trim() !== "") // 다시 한번 검증
+                            .map((province, index) => (
+                              <SelectItem 
+                                key={`province-${index}-${province}`} 
+                                value={province}
+                              >
+                                {province}
+                              </SelectItem>
+                            ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -360,11 +389,16 @@ export default function HousingViewer() {
                           <SelectValue placeholder="선택하세요" />
                         </SelectTrigger>
                         <SelectContent>
-                          {uniqueCities.map((city) => (
-                            <SelectItem key={city} value={city}>
-                              {city}
-                            </SelectItem>
-                          ))}
+                          {uniqueCities
+                            .filter(city => city && city.trim() !== "") // 다시 한번 검증
+                            .map((city, index) => (
+                              <SelectItem 
+                                key={`city-${index}-${city}`} 
+                                value={city}
+                              >
+                                {city}
+                              </SelectItem>
+                            ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -378,12 +412,17 @@ export default function HousingViewer() {
                         <SelectTrigger>
                           <SelectValue placeholder="선택하세요" />
                         </SelectTrigger>
-                        <SelectContent>
-                          {uniqueHouseTypes.map((type) => (
-                            <SelectItem key={type} value={type}>
-                              {type}
-                            </SelectItem>
-                          ))}
+                         <SelectContent>
+                          {uniqueHouseTypes
+                            .filter(type => type && type.trim() !== "") // 다시 한번 검증
+                            .map((type, index) => (
+                              <SelectItem 
+                                key={`type-${index}-${type}`} 
+                                value={type}
+                              >
+                                {type}
+                              </SelectItem>
+                            ))}
                         </SelectContent>
                       </Select>
                     </div>
@@ -483,7 +522,7 @@ export default function HousingViewer() {
 
                         <p className="text-gray-700 mb-3">{housing.address_detail}</p>
                         <p className="text-sm text-gray-600 mb-3">
-                          주관기관: {기관매핑[housing.agency_id as keyof typeof 기관매핑]}
+                          주관기관: <strong>{(housing.agency_id)}</strong>
                         </p>
 
                         <div className="flex gap-4 text-sm mb-3">
@@ -520,7 +559,7 @@ export default function HousingViewer() {
                               <ExternalLink className="w-3 h-3" />
                             </div>
                             <span className="text-xs opacity-70 leading-tight">
-                              {기관매핑[housing.agency_id as keyof typeof 기관매핑]}
+                              {housing.agency_id}
                             </span>
                           </a>
                         </Button>
