@@ -18,11 +18,10 @@ export interface HousingItem {
 'use client';
 
 export async function fetchHousingData(): Promise<HousingItem[]> {
-  console.log('📡 API 호출 시작');
+  // console.log('API 호출 시작');
   const res = await fetch('http://localhost:5000/api/housings');
   if (!res.ok) throw new Error('Failed to fetch data');
   const data = await res.json();
-  console.log('받아온 데이터:', data);
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+  // console.log('받아온 데이터:', data);
   return data;
 }
