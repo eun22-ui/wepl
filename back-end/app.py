@@ -3,13 +3,13 @@ from flask_cors import CORS  # ← 추가
 import pymysql
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000", "http://192.168.56.1:3000"])
+CORS(app, origins=["http://localhost:3000", "http://54.180.202.149:3000"])
 
 def get_db_connection():
     return pymysql.connect(
-          host="127.0.0.1",
-          user="root",
-          password="mysql",
+          host="wepl-database-mysql.cd4gwa442142.ap-northeast-2.rds.amazonaws.com",
+          user="admin",
+          password="wepl1234",
           database="wepl",
           charset='utf8mb4',
         cursorclass=pymysql.cursors.DictCursor
