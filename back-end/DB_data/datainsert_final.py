@@ -83,9 +83,9 @@ def load_and_insert(file_path, json_path=None, start_id=1, conn=None):
 # ----------------- 실행부 -------------------------------
 
 conn = pymysql.connect(
-    host="127.0.0.1",
-    user="root",
-    password="mysql",
+    host="wepl-database-mysql.cd4gwa442142.ap-northeast-2.rds.amazonaws.com",
+    user="admin",
+    password="wepl1234",
     database="wepl",
     charset="utf8mb4"
 )
@@ -94,15 +94,15 @@ try:
     start_id = 1
 
     # LH
-    load_and_insert("lh_api.json", json_path=["response", "body", "item"], start_id=start_id, conn=conn)
+#    load_and_insert("lh_api.json", json_path=["response", "body", "item"], start_id=start_id, conn=conn)
     start_id += 10000
 
     # SH
-    load_and_insert("pdf_based_housing_data.json", json_path=None, start_id=start_id, conn=conn)
+    load_and_insert("SH_housing_final.json", json_path=None, start_id=start_id, conn=conn)
     start_id += 10000
 
     # HUG
-    load_and_insert("hug_final_dndeonjeonse.json", json_path=None, start_id=start_id, conn=conn)
+#    load_and_insert("hug_final_dndeonjeonse.json", json_path=None, start_id=start_id, conn=conn)
 
 finally:
     conn.close()
