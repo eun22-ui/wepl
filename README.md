@@ -21,7 +21,8 @@
 
 
 > ### 아키텍쳐 / 기술스택 
-> <img width="800" height="1200" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
+> <img width="423" height="615" alt="2조의 사본" src="https://github.com/user-attachments/assets/f6a46e49-715d-41fd-95aa-014df5f628e6" />
+
 
 
 * 운영체제 : Amazon Linux
@@ -39,8 +40,8 @@
 
 <br>
 
-> ### 시스템 아키텍쳐 
-> <img width="4700" height="2692" alt="image" src="https://github.com/user-attachments/assets/8ca0f382-6be3-4a91-90f9-88d67ff0ddaf" />
+> ### 시스템 아키텍쳐
+> <img width="4700" height="2692" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
 
 
 <br>
