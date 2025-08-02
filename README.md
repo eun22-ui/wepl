@@ -21,7 +21,8 @@
 
 
 > ### 아키텍쳐 / 기술스택 
-> <img width="300" height="500" alt="2조의 사본" src="https://github.com/user-attachments/assets/4d3fc63f-d159-4754-a8ec-5e17020faf02" />
+> <img width="800" height="1200" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
+
 
 * 운영체제 : Amazon Linux
 * 사용언어 : Web backend / Web frontend
