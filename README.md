@@ -1,6 +1,7 @@
 #### **This repository is for personal improvement and study after completing a team project**
 
 <hr/>
+<img width="100" height="100" alt="logo" src="https://github.com/user-attachments/assets/1dd51e86-2664-4e70-8041-09ce6d60e1cd" />
 
 > ### **Korean Housing**
 > 공공주택 통합 플랫폼 : 
@@ -10,19 +11,17 @@
 <br>
 
 > ### 개발기간 
-2025.06.24 ~ 2025.07.31
-
-
-
-
-인원 : 5명 / 개발기간 : 6주
+> 2025.06.24 ~ 2025.07.31
+> 
+> 인원 : 5명 / 개발기간 : 6주
 
 <br>
 
 
-> ### 아키텍쳐 / 기술스스택 
-* 운영체제 : Linux/UNIX
+> ### 아키텍쳐 / 기술스택 
+> <img width="300" height="500" alt="2조의 사본" src="https://github.com/user-attachments/assets/4d3fc63f-d159-4754-a8ec-5e17020faf02" />
 
+* 운영체제 : Amazon Linux
 * 사용언어 : Web backend / Web frontend
 
 
@@ -37,54 +36,43 @@
 
 <br>
 
+> ### 시스템 아키텍쳐 
+> <img width="4700" height="2692" alt="image" src="https://github.com/user-attachments/assets/8ca0f382-6be3-4a91-90f9-88d67ff0ddaf" />
+
+
+<br>
+
 > ### ERD 구조
-> <img width="650" height="292" alt="AD_4nXfk3fa6oMbKON8WgA5TYTyiyc5kWaR7J77Wdkk8WoEy6Yo66Hjl4-tunVgAM4DdKyRJw9EqqhGEYwviKhYVDEkQWeI7lNxpwXZ7XDPCuM0HOLf_IqNa9e6pCqF8Uo33Yeg_P6U1nA" src="https://github.com/user-attachments/assets/4e83689d-1349-4909-af53-e714c30c4d4f" />
-<br>
-
-> <img width="650" height="401" alt="AD_4nXePerVN2d_nqLtfAybfE8U6TC_GOdz4rBcwxD28IFuvf5eKGzPrZdYm1UvniYQAMv_WsqyeP4WitiPYLdXShMLUdgfKrjxLjrK5V_tqtZZlX3-B_sbv18CzcCPPHXBlSnZsY7NTjQ (8)" src="https://github.com/user-attachments/assets/daf946db-0583-4fb9-816b-b0f401fac7b1" />
-> <img width="550" height="800" alt="AD_4nXdB3ODKRJt6HcmmceYdp646w2RpOChYUA-kKqQUOq-8xXjyh9KAw-bWKujSq55m_L4kdFuxrUyFm1pVe1LeZOYmvWuB_-mX0ibZD2uw413RuM_oH-KHbwcX6l1uY80x739l5eVMYg" src="https://github.com/user-attachments/assets/ea0b01f1-1bcb-41d1-970e-608de21ebd12" />
+> <img width="450" height="800" alt="AD_4nXdB3ODKRJt6HcmmceYdp646w2RpOChYUA-kKqQUOq-8xXjyh9KAw-bWKujSq55m_L4kdFuxrUyFm1pVe1LeZOYmvWuB_-mX0ibZD2uw413RuM_oH-KHbwcX6l1uY80x739l5eVMYg" src="https://github.com/user-attachments/assets/ea0b01f1-1bcb-41d1-970e-608de21ebd12" />
 
 
 
 <br>
 
-> ### 주요기능
-##### 1.   메인페이지(index)
+> ### 프로젝트 수행 경과
+> <img width="400" height="500" alt="2조의 사본 (8)" src="https://github.com/user-attachments/assets/3b4b5dd4-df2d-4580-af61-ee9e25801aea" />
 
-   
-       공연 검색어 / 티켓 오픈 / 장르별, 지역별 랭킹 / 실시간 공연 순위
+<br>
 
-##### 2.    로그인 / 회원가입 / 마이페이지 
+> <img width="500" height="250" alt="2조의 사본 (5)" src="https://github.com/user-attachments/assets/c3559e44-96e1-4383-b971-2116ff2540cc" />
 
+<br>
 
-       회원정보 수정/배송지 관리 / 비밀번호 변경/ 회원 탈퇴 / 소모임, 채팅방 목록    
-       조회 / 구독 서비스 / 회원등급 / 문의 내역 조회 / 결제 목록 조회
-
-##### 3.   상세 페이지
-
-    
-       기본, 상세 정보/ 공연 리뷰 (평점)
-##### 4.   예약 및 결제 페이지 
+> <img width="4612" height="1940" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
 
 
-       회차 및 날짜 선택 / 좌석선택 / 멤버등급별 쿠폰적용 /
-      결제(카드/무통장)  / 결제 완료 데이터 / 환불
-##### 5.  고객센터
+
+<br>
+
+> <img width="4608" height="1780" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
 
 
-       자주하는 질문 답변(FAQ) / 1:1 문의 
-##### 6.  커뮤니티
 
 
-    
-       공연 관련 채팅 / 공연 관람 소모임
-##### 7.  공지사항
-     
-       일반 공지
-       
-##### 8.  관리자페이지
-     
-       회원관리 / 공연 관리 / 커뮤니티 관리 / 고객센터 관리
+<br>
+
+> ### 시연영상
+> 
 
 
 <br>
