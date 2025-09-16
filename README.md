@@ -1,7 +1,7 @@
 ### **This repository is for personal improvement and study after completing a team project**
 
 <hr/>
-<img width="100" height="100" alt="logo" src="https://github.com/user-attachments/assets/1dd51e86-2664-4e70-8041-09ce6d60e1cd" />
+<img width="50" height="50" alt="logo" src="https://github.com/user-attachments/assets/1dd51e86-2664-4e70-8041-09ce6d60e1cd" />
 
 > ### **Korean Housing**
 > **Cloud Architecture : 클라우드 인프라 구성과 성능 고도화**
