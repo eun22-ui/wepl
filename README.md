@@ -21,7 +21,7 @@
 
 
 > ### 아키텍쳐 / 기술스택 
-> <img width="423" height="615" alt="2조의 사본" src="https://github.com/user-attachments/assets/f6a46e49-715d-41fd-95aa-014df5f628e6" />
+> <img width="250" height="350" alt="2조의 사본" src="https://github.com/user-attachments/assets/f6a46e49-715d-41fd-95aa-014df5f628e6" />
 
 
 
@@ -41,34 +41,34 @@
 <br>
 
 > ### 시스템 아키텍쳐
-> <img width="4000" height="2500" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
+> <img width="3000" height="2000" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
 
 
 <br>
 
 > ### ERD 구조
-> <img width="350" height="500" alt="AD_4nXdB3ODKRJt6HcmmceYdp646w2RpOChYUA-kKqQUOq-8xXjyh9KAw-bWKujSq55m_L4kdFuxrUyFm1pVe1LeZOYmvWuB_-mX0ibZD2uw413RuM_oH-KHbwcX6l1uY80x739l5eVMYg" src="https://github.com/user-attachments/assets/ea0b01f1-1bcb-41d1-970e-608de21ebd12" />
+> <img width="300" height="400" alt="AD_4nXdB3ODKRJt6HcmmceYdp646w2RpOChYUA-kKqQUOq-8xXjyh9KAw-bWKujSq55m_L4kdFuxrUyFm1pVe1LeZOYmvWuB_-mX0ibZD2uw413RuM_oH-KHbwcX6l1uY80x739l5eVMYg" src="https://github.com/user-attachments/assets/ea0b01f1-1bcb-41d1-970e-608de21ebd12" />
 
 
 
 <br>
 
 > ### 프로젝트 수행 경과
-> <img width="400" height="500" alt="2조의 사본 (8)" src="https://github.com/user-attachments/assets/3b4b5dd4-df2d-4580-af61-ee9e25801aea" />
+> <img width="250" height="300" alt="2조의 사본 (8)" src="https://github.com/user-attachments/assets/3b4b5dd4-df2d-4580-af61-ee9e25801aea" />
 
 <br>
 
-> <img width="500" height="250" alt="2조의 사본 (5)" src="https://github.com/user-attachments/assets/c3559e44-96e1-4383-b971-2116ff2540cc" />
+> <img width="250" height="200" alt="2조의 사본 (5)" src="https://github.com/user-attachments/assets/c3559e44-96e1-4383-b971-2116ff2540cc" />
 
 <br>
 
-> <img width="1500" height="600" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
+> <img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
 
 
 
 <br>
 
-> <img width="1500" height="600" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
+> <img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
 
 
 
