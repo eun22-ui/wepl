@@ -62,13 +62,13 @@
 
 <br>
 
-> <img width="4612" height="1940" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
+> <img width="3612" height="940" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
 
 
 
 <br>
 
-> <img width="4608" height="1780" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
+> <img width="3608" height="780" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
 
 
 
