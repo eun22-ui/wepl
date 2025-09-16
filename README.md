@@ -41,13 +41,13 @@
 <br>
 
 > ### 시스템 아키텍쳐
-> <img width="4700" height="2692" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
+> <img width="4000" height="2500" alt="image" src="https://github.com/user-attachments/assets/d4524bfa-a787-431a-9ade-a032172192e1" />
 
 
 <br>
 
 > ### ERD 구조
-> <img width="450" height="800" alt="AD_4nXdB3ODKRJt6HcmmceYdp646w2RpOChYUA-kKqQUOq-8xXjyh9KAw-bWKujSq55m_L4kdFuxrUyFm1pVe1LeZOYmvWuB_-mX0ibZD2uw413RuM_oH-KHbwcX6l1uY80x739l5eVMYg" src="https://github.com/user-attachments/assets/ea0b01f1-1bcb-41d1-970e-608de21ebd12" />
+> <img width="350" height="500" alt="AD_4nXdB3ODKRJt6HcmmceYdp646w2RpOChYUA-kKqQUOq-8xXjyh9KAw-bWKujSq55m_L4kdFuxrUyFm1pVe1LeZOYmvWuB_-mX0ibZD2uw413RuM_oH-KHbwcX6l1uY80x739l5eVMYg" src="https://github.com/user-attachments/assets/ea0b01f1-1bcb-41d1-970e-608de21ebd12" />
 
 
 
@@ -62,13 +62,13 @@
 
 <br>
 
-> <img width="3612" height="940" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
+> <img width="1500" height="600" alt="image" src="https://github.com/user-attachments/assets/a9d68261-5fb9-4016-a422-68b65f4a7693" />
 
 
 
 <br>
 
-> <img width="3608" height="780" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
+> <img width="1500" height="600" alt="image" src="https://github.com/user-attachments/assets/5ce8a153-f0ea-41bf-9893-9e3e65a5e92e" />
 
 
 
